@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"conduitApp\/feature\/Articles[1:7]","start":1627894833904,"end":1627894836755,"title":"conduitApp\/feature\/Articles[1:7] 14:30:33.904-14:30:36.755 Create a new article"},{"id":2,"group":1,"content":"conduitApp\/feature\/HomePage[1.1:21]","start":1627894837865,"end":1627894838720,"title":"conduitApp\/feature\/HomePage[1.1:21] 14:30:37.865-14:30:38.720 Get all Users"},{"id":3,"group":1,"content":"conduitApp\/Performance\/getUsers[1:5]","start":1627894838947,"end":1627894839294,"title":"conduitApp\/Performance\/getUsers[1:5] 14:30:38.947-14:30:39.294 Get all Users"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
